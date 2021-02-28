@@ -12,12 +12,27 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  program_font-mirror:
+  font-mirror:
     runs-on: ubuntu-latest
     steps:
       - uses: wearerequired/git-mirror-action@v1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
-          source-repo: 'git@github.com:tracyone/program_font.git'
-          destination-repo: 'git@gitee.com:pagie/program_font.git'
+          source-repo: git@github.com:tracyone/program_font.git
+          destination-repo: git@gitee.com:pagie/program_font.git
+		  
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:ProgrammingFonts/ProgrammingFonts.git
+          destination-repo: git@gitee.com:pagie/ProgrammingFonts.git
+		  
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:be5invis/Sarasa-Gothic.git
+          destination-repo: git@gitee.com:pagie/Sarasa-Gothic.git
+		  
