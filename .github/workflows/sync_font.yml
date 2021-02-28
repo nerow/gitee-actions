@@ -15,21 +15,24 @@ jobs:
   font-mirror:
     runs-on: ubuntu-latest
     steps:
-      - uses: wearerequired/git-mirror-action@v1
+      - name: sync tracyone/program_font
+        uses: wearerequired/git-mirror-action@v1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
           source-repo: git@github.com:tracyone/program_font.git
           destination-repo: git@gitee.com:pagie/program_font.git
 
-      - uses: wearerequired/git-mirror-action@v1
+      - name: sync ProgrammingFonts/ProgrammingFonts
+        uses: wearerequired/git-mirror-action@v1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
           source-repo: git@github.com:ProgrammingFonts/ProgrammingFonts.git
           destination-repo: git@gitee.com:pagie/ProgrammingFonts.git
 
-      - uses: wearerequired/git-mirror-action@v1
+      - name: sync be5invis/Sarasa-Gothic
+        uses: wearerequired/git-mirror-action@v1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
